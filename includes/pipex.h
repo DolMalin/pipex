@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:37:32 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/11 14:48:07 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/11 16:10:40 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ typedef	enum
 
 /* ============== ~ INPUT PARSING ~ ============== */
 void	check_input(int ac, char **av, char **envp);
+int		check_exec_rights(char **av, char **envp);
 char	**get_all_paths(char **envp);
+char	*find_path(char	**paths, char *cmd, int flag);
+void	pathsclear(char **paths, char *path1, char *path2);
 
 #endif

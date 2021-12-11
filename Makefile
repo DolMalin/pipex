@@ -6,7 +6,7 @@
 #    By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 14:35:08 by pdal-mol          #+#    #+#              #
-#    Updated: 2021/12/11 13:41:16 by pdal-mol         ###   ########.fr        #
+#    Updated: 2021/12/11 16:11:05 by pdal-mol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,10 @@ NAME = pipex
 
 INPUT_PARSING = \
 				check_input.c\
+				check_exec_rights.c\
 				get_all_paths.c\
+				find_path.c\
+				pathsclear.c
 
 FILES = \
 				main.c\
