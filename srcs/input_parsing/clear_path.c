@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pathsclear.c                                       :+:      :+:    :+:   */
+/*   clear_path.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 15:27:25 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/11 16:25:54 by pdal-mol         ###   ########.fr       */
+/*   Created: 2021/12/12 14:05:53 by pdal-mol          #+#    #+#             */
+/*   Updated: 2021/12/12 14:19:24 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/pipex.h"
 
-void	pathsclear(char **paths, char *path1, char *path2)
+void	clear_path(t_data *data)
 {
 	size_t	i;
 
 	i = 0;
-	while (paths[i])
+	while (data->paths[i])
 	{
-		free(paths[i]);
+		free(data->paths[i]);
 		i++;
 	}
-	free(paths);
-	if (path1)
-		free(path1);
-	if (path2)
-		free(path2);
+	free(data->paths);
+	if (data->path1)
+		free(data->path1);
+	if (data->path2)
+		free(data->path2);
+	free(data);
 }

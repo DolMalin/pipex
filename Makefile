@@ -6,7 +6,7 @@
 #    By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 14:35:08 by pdal-mol          #+#    #+#              #
-#    Updated: 2021/12/12 11:07:49 by pdal-mol         ###   ########.fr        #
+#    Updated: 2021/12/12 14:26:23 by pdal-mol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ INPUT_PARSING = \
 				err_msg.c\
 				find_path.c\
 				get_all_paths.c\
-				pathsclear.c
+				clear_path.c\
+				init_path.c
 
 FILES = \
 				main.c\
