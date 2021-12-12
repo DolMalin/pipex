@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:37:32 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 18:00:51 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 21:43:35 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 
-/* ============== ~ DEFINES ~ ============== */
-typedef enum e_bool
-{
-	false,
-	true
-}			t_bool;
-
+/* ============== ~ STRUCTS ~ ============== */
 typedef struct s_cmd
 {
 	char	*path1;
