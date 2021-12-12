@@ -6,7 +6,7 @@
 #    By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 14:35:08 by pdal-mol          #+#    #+#              #
-#    Updated: 2021/12/12 17:33:49 by pdal-mol         ###   ########.fr        #
+#    Updated: 2021/12/12 18:00:45 by pdal-mol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ NAME = pipex
 FILES = \
 				check_err.c\
 				check_exec_rights.c\
-				check_input.c\
 				err_msg.c\
 				find_path.c\
 				get_all_paths.c\

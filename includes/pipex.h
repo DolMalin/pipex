@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:37:32 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 17:56:36 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 18:00:51 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct s_cmd
 }			t_cmd;
 
 /* ============== ~ PROTOTYPES ~ ============== */
-void	check_input(int ac, char **av, char **envp);
 int		check_exec_rights(char **av, char **envp);
 void	check_err(char **av, char **envp);
 void	err_msg(const char *msg, const char *filename);

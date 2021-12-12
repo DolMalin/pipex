@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 11:02:01 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 17:43:34 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 18:00:24 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,9 @@ static void	pipex(char **av, char **envp)
 
 int	main(int ac, char **av, char **envp)
 {
-	check_input(ac, av, envp);
+	if (ac != 5)
+		exit(EXIT_FAILURE);
+	check_err(av, envp);
 	pipex(av, envp);
 	return (0);
 }
