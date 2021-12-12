@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 16:08:28 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 17:33:01 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 17:59:23 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	check_exec_rights(char **av, char **envp)
 
 	output_code = 0;
 	cmd = init_cmd(av, envp);
-	if (access(av[1], F_OK) == -1 || !av[1])
+	if (access(av[1], F_OK) == -1)
 		output_code = 1;
 	else if ((access(av[1], F_OK) == 0 && access(av[1], R_OK) == -1) || !av[1])
 		output_code = 2;

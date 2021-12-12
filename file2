@@ -1,8 +1,0 @@
-total 40$
--rw-r--r--   1 pdal-mol  4221   1548 Dec 12 17:33 Makefile$
--rw-r--r--   1 pdal-mol  4221      0 Dec 12 17:34 file2$
-drwxr-xr-x   3 pdal-mol  4221    102 Dec  9 14:37 includes$
-drwxr-xr-x  86 pdal-mol  4221   2924 Dec 12 17:34 libft$
--rwxr-xr-x   1 pdal-mol  4221  13972 Dec 12 17:34 pipex$
-drwxr-xr-x  22 pdal-mol  4221    748 Dec 12 17:34 srcs$
-drwxr-xr-x   5 pdal-mol  4221    170 Dec 12 17:03 test$
