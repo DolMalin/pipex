@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:37:32 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 21:43:35 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 22:06:25 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PIPEX_H
 
 /* ============== ~ INCLUDES ~ ============== */
-# include "../../libft/libft.h"
+# include "../libft/libft.h"
 # include <unistd.h>
 # include <sys/types.h>
 # include <sys/stat.h>
