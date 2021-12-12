@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_path.c                                        :+:      :+:    :+:   */
+/*   init_cmd.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 14:25:22 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 14:25:41 by pdal-mol         ###   ########.fr       */
+/*   Created: 2021/12/12 14:51:54 by pdal-mol          #+#    #+#             */
+/*   Updated: 2021/12/12 14:51:56 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/pipex.h"
 
-t_data	*init_path(char **av, char **envp)
+t_cmd	*init_cmd(char **av, char **envp)
 {
-	t_data	*data;	
+	t_cmd	*cmd;
+	char	**temp;
+	size_t	i;
 
-	data = malloc(sizeof(t_data));
-	if (!data)
+	i = 0;
+	cmd = malloc(sizeof(t_cmd));
+	if (!cmd)
 		return (NULL);
-	data->paths = get_all_paths(envp);
-	data->path1 = find_path(data->paths, av[2], X_OK);
-	data->path2 = find_path(data->paths, av[3], X_OK);
-	return (data);
+	temp = get_all_paths(envp);
+	cmd->path1 = find_path(temp, av[2], X_OK);
+	cmd->path2 = find_path(temp, av[3], X_OK);
+	while (temp[i])
+	{
+		free(temp[i]);
+		i++;
+	}
+	free(temp);
+	return (cmd);
 }

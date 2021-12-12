@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 11:02:01 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 13:57:53 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 14:45:52 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 	TODO :
 	- 
 */
+
+void	pipex(int ac, char **av, char **envp)
+{
+
+}
 
 int	main(int ac, char **av, char **envp)
 {

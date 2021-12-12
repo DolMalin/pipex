@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear_path.c                                       :+:      :+:    :+:   */
+/*   clear_cmd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 14:05:53 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 14:19:24 by pdal-mol         ###   ########.fr       */
+/*   Created: 2021/12/12 14:51:15 by pdal-mol          #+#    #+#             */
+/*   Updated: 2021/12/12 14:51:17 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/pipex.h"
 
-void	clear_path(t_data *data)
+void	clear_cmd(t_cmd *cmd)
 {
-	size_t	i;
-
-	i = 0;
-	while (data->paths[i])
-	{
-		free(data->paths[i]);
-		i++;
-	}
-	free(data->paths);
-	if (data->path1)
-		free(data->path1);
-	if (data->path2)
-		free(data->path2);
-	free(data);
+	if (cmd->path1)
+		free(cmd->path1);
+	if (cmd->path2)
+		free(cmd->path2);
+	free(cmd);
 }
