@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 11:02:01 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 16:54:21 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 17:27:04 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void	child_process(char **envp, char **av, int end[2], t_cmd *cmd)
 	close(end[0]);
 	execve(cmd->path1, ft_split(av[2], ' '), envp);
 	close(fd);
+	clear_cmd(cmd);
 	exit(EXIT_FAILURE);
 }
 
@@ -34,13 +35,13 @@ static void	parent_process(char **envp, char **av, int end[2], t_cmd *cmd)
 	dup2(end[0], STDIN_FILENO);
 	close(end[1]);
 	execve(cmd->path2, ft_split(av[3], ' '), envp);
+	clear_cmd(cmd);
 	exit(EXIT_FAILURE);
 }
 
-static void	pipex(int ac, char **av, char **envp)
+static void	pipex(char **av, char **envp)
 {
 	t_cmd	*cmd;
-	int		fd;
 	int		end[2];
 	int		pid;
 
@@ -50,11 +51,11 @@ static void	pipex(int ac, char **av, char **envp)
 	if (pid > 0)
 		child_process(envp, av, end, cmd);
 	else if (waitpid(pid, 0, 0) == -1)
-		child_process(envp, av, end, cmd);
+		parent_process(envp, av, end, cmd);
 }
 
 int	main(int ac, char **av, char **envp)
 {
 	check_input(ac, av, envp);
-	pipex(ac, av, envp);
+	pipex(av, envp);
 }

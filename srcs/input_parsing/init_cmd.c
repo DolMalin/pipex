@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 14:51:54 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 16:39:58 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 17:28:09 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ t_cmd	*init_cmd(char **av, char **envp)
 		exit(EXIT_FAILURE);
 	temp = get_all_paths(envp);
 	temp_path = ft_split(av[2], ' ');
-	cmd->path1 = find_path(temp, temp_path[0], X_OK);
+	cmd->path1 = find_path(temp, temp_path[0]);
 	free_doublechar(temp_path);
 	temp_path = ft_split(av[3], ' ');
-	cmd->path2 = find_path(temp, temp_path[0], X_OK);
+	cmd->path2 = find_path(temp, temp_path[0]);
 	free_doublechar(temp_path);
 	free_doublechar(temp);
 	return (cmd);

@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:37:32 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 16:40:18 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 17:27:29 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int		check_exec_rights(char **av, char **envp);
 t_bool	check_err(char **av, char **envp);
 void	err_msg(const char *msg, const char *filename);
 char	**get_all_paths(char **envp);
-char	*find_path(char	**paths, char *cmd, int flag);
-void	clear_cmd(t_cmd *path);
+char	*find_path(char	**paths, char *cmd);
+void	clear_cmd(t_cmd *cmd);
 t_cmd	*init_cmd(char **av, char **envp);
 void	free_doublechar(char **arr);
 
