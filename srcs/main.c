@@ -6,13 +6,11 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 11:02:01 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 16:35:46 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 16:54:21 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
-
-#include "stdio.h"
 
 static void	child_process(char **envp, char **av, int end[2], t_cmd *cmd)
 {
