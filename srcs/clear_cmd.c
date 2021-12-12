@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_doublechar.c                                  :+:      :+:    :+:   */
+/*   clear_cmd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 16:37:27 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 16:38:58 by pdal-mol         ###   ########.fr       */
+/*   Created: 2021/12/12 14:51:15 by pdal-mol          #+#    #+#             */
+/*   Updated: 2021/12/12 17:33:08 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pipex.h"
+#include "../includes/pipex.h"
 
-void	free_doublechar(char **arr)
+void	clear_cmd(t_cmd *cmd)
 {
-	size_t	i;
-
-	i = 0;
-	while (arr[i])
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
+	if (cmd->path1)
+		free(cmd->path1);
+	if (cmd->path2)
+		free(cmd->path2);
+	free(cmd);
 }

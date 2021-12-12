@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_all_paths.c                                    :+:      :+:    :+:   */
+/*   free_doublechar.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 13:40:56 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/11 14:52:01 by pdal-mol         ###   ########.fr       */
+/*   Created: 2021/12/12 16:37:27 by pdal-mol          #+#    #+#             */
+/*   Updated: 2021/12/12 17:33:17 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pipex.h"
+#include "../includes/pipex.h"
 
-char	**get_all_paths(char **envp)
+void	free_doublechar(char **arr)
 {
 	size_t	i;
 
 	i = 0;
-	while (envp[i] && ft_strncmp(envp[i], "PATH=", 5))
+	while (arr[i])
+	{
+		free(arr[i]);
 		i++;
-	return (ft_split(&envp[i][5], ':'));
+	}
+	free(arr);
 }

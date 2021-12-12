@@ -6,11 +6,11 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 14:51:54 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 17:28:09 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 17:33:22 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pipex.h"
+#include "../includes/pipex.h"
 
 t_cmd	*init_cmd(char **av, char **envp)
 {

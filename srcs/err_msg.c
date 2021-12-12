@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_path.c                                        :+:      :+:    :+:   */
+/*   err_msg.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 15:04:44 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 17:27:21 by pdal-mol         ###   ########.fr       */
+/*   Created: 2021/12/12 11:04:21 by pdal-mol          #+#    #+#             */
+/*   Updated: 2021/12/12 17:33:11 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pipex.h"
+#include "../includes/pipex.h"
 
-char	*find_path(char	**paths, char *cmd)
+void	err_msg(const char *msg, const char *filename)
 {
-	size_t	i;
-	char	*temp;
-	char	*path;
-
-	i = 0;
-	while (paths[i])
-	{
-		temp = ft_strjoin(paths[i], "/");
-		path = ft_strjoin(temp, cmd);
-		free(temp);
-		if (access(path, F_OK) == 0)
-			return (path);
-		free(path);
-		i++;
-	}
-	return (NULL);
+	ft_putstr_fd(msg, 2);
+	ft_putstr_fd(filename, 2);
+	ft_putstr_fd("\n", 2);
 }

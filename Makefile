@@ -6,13 +6,13 @@
 #    By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 14:35:08 by pdal-mol          #+#    #+#              #
-#    Updated: 2021/12/12 17:25:58 by pdal-mol         ###   ########.fr        #
+#    Updated: 2021/12/12 17:33:49 by pdal-mol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
 
-INPUT_PARSING = \
+FILES = \
 				check_err.c\
 				check_exec_rights.c\
 				check_input.c\
@@ -21,11 +21,9 @@ INPUT_PARSING = \
 				get_all_paths.c\
 				clear_cmd.c\
 				free_doublechar.c\
-				init_cmd.c
+				init_cmd.c\
+				main.c
 
-FILES = \
-				main.c\
-				$(addprefix input_parsing/,$(INPUT_PARSING))
 LIB = ./libft/libft.a
 SRCS = $(addprefix ./srcs/,$(FILES))
 OBJ = $(SRCS:.c=.o)

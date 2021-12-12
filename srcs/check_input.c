@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   err_msg.c                                          :+:      :+:    :+:   */
+/*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 11:04:21 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 11:04:39 by pdal-mol         ###   ########.fr       */
+/*   Created: 2021/12/11 11:09:13 by pdal-mol          #+#    #+#             */
+/*   Updated: 2021/12/12 17:33:05 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pipex.h"
+#include "../includes/pipex.h"
 
-void	err_msg(const char *msg, const char *filename)
+void	check_input(int ac, char **av, char **envp)
 {
-	ft_putstr_fd(msg, 2);
-	ft_putstr_fd(filename, 2);
-	ft_putstr_fd("\n", 2);
+	if (ac != 5 || !check_err(av, envp))
+		exit(EXIT_FAILURE);
 }

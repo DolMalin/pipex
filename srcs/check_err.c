@@ -6,11 +6,11 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 11:05:05 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 16:23:53 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 17:32:58 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pipex.h"
+#include "../includes/pipex.h"
 
 t_bool	check_err(char **av, char **envp)
 {

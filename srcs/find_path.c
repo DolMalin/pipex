@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input.c                                      :+:      :+:    :+:   */
+/*   find_path.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 11:09:13 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 11:17:52 by pdal-mol         ###   ########.fr       */
+/*   Created: 2021/12/11 15:04:44 by pdal-mol          #+#    #+#             */
+/*   Updated: 2021/12/12 17:33:14 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/pipex.h"
+#include "../includes/pipex.h"
 
-void	check_input(int ac, char **av, char **envp)
+char	*find_path(char	**paths, char *cmd)
 {
-	if (ac != 5 || !check_err(av, envp))
-		exit(EXIT_FAILURE);
+	size_t	i;
+	char	*temp;
+	char	*path;
+
+	i = 0;
+	while (paths[i])
+	{
+		temp = ft_strjoin(paths[i], "/");
+		path = ft_strjoin(temp, cmd);
+		free(temp);
+		if (access(path, F_OK) == 0)
+			return (path);
+		free(path);
+		i++;
+	}
+	return (NULL);
 }
