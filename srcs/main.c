@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 11:02:01 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 18:00:24 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 22:24:08 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 static void	child_process(char **envp, char **av, int end[2], t_cmd *cmd)
 {
 	int		fd;
-	char	**cmd_flagless;
+	char	**cmd_flag;
 
 	fd = open(av[1], O_RDONLY);
-	cmd_flagless = ft_split(av[2], ' ');
-	if (fd == -1 || !cmd_flagless)
+	cmd_flag = ft_split(av[2], ' ');
+	if (fd == -1 || !cmd_flag)
 	{
 		clear_cmd(cmd);
 		exit(EXIT_FAILURE);
@@ -27,21 +27,21 @@ static void	child_process(char **envp, char **av, int end[2], t_cmd *cmd)
 	dup2(fd, STDIN_FILENO);
 	dup2(end[1], STDOUT_FILENO);
 	close(end[0]);
-	execve(cmd->path1, cmd_flagless, envp);
+	execve(cmd->path1, cmd_flag, envp);
 	close(fd);
 	clear_cmd(cmd);
-	free_doublechar(cmd_flagless);
+	free_doublechar(cmd_flag);
 	exit(EXIT_SUCCESS);
 }
 
 static void	parent_process(char **envp, char **av, int end[2], t_cmd *cmd)
 {
 	int		fd;
-	char	**cmd_flagless;
+	char	**cmd_flag;
 
 	fd = open(av[4], O_WRONLY | O_CREAT, 0666);
-	cmd_flagless = ft_split(av[3], ' ');
-	if (fd == -1 || !cmd_flagless)
+	cmd_flag = ft_split(av[3], ' ');
+	if (fd == -1 || !cmd_flag)
 	{
 		clear_cmd(cmd);
 		exit(EXIT_FAILURE);
@@ -49,10 +49,15 @@ static void	parent_process(char **envp, char **av, int end[2], t_cmd *cmd)
 	dup2(fd, STDOUT_FILENO);
 	dup2(end[0], STDIN_FILENO);
 	close(end[1]);
-	execve(cmd->path2, cmd_flagless, envp);
+	execve(cmd->path2, cmd_flag, envp);
 	clear_cmd(cmd);
 	exit(EXIT_SUCCESS);
 }
+
+/* 
+	TODO 
+	- Protect pipe and fork
+*/
 
 static void	pipex(char **av, char **envp)
 {
