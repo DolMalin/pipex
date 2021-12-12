@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 11:05:05 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 11:13:50 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 16:23:53 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ t_bool	check_err(char **av, char **envp)
 	else if (err_code == 4)
 		err_msg("zsh: command not found: ", av[3]);
 	else if (err_code == 5)
-		err_msg("zsh: no such file or directory: ", av[4]);
-	else if (err_code == 6)
 		err_msg("zsh: permission denied: ", av[4]);
 	return (false);
 }

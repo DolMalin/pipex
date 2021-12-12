@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:37:32 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 14:52:09 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/12 16:40:18 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 /* ============== ~ INCLUDES ~ ============== */
 # include "../../libft/libft.h"
 # include <unistd.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 
 /* ============== ~ DEFINES ~ ============== */
 typedef enum e_bool
@@ -30,7 +33,7 @@ typedef struct s_cmd
 	char	*path2;
 }			t_cmd;
 
-/* ============== ~ INPUT PARSING ~ ============== */
+/* ============== ~ PROTOTYPES ~ ============== */
 void	check_input(int ac, char **av, char **envp);
 int		check_exec_rights(char **av, char **envp);
 t_bool	check_err(char **av, char **envp);
@@ -39,5 +42,6 @@ char	**get_all_paths(char **envp);
 char	*find_path(char	**paths, char *cmd, int flag);
 void	clear_cmd(t_cmd *path);
 t_cmd	*init_cmd(char **av, char **envp);
+void	free_doublechar(char **arr);
 
 #endif

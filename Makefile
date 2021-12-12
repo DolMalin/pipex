@@ -6,7 +6,7 @@
 #    By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 14:35:08 by pdal-mol          #+#    #+#              #
-#    Updated: 2021/12/12 14:51:30 by pdal-mol         ###   ########.fr        #
+#    Updated: 2021/12/12 16:41:02 by pdal-mol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ INPUT_PARSING = \
 				find_path.c\
 				get_all_paths.c\
 				clear_cmd.c\
+				free_doublechar.c\
 				init_cmd.c
 
 FILES = \
@@ -62,7 +63,7 @@ LIBFT_FILES = \
 				ft_putstr_fd.c\
 				ft_putendl_fd.c\
 				ft_putnbr_fd.c\
-				ft_putunbr_fd.c
+				ft_putunbr_fd.c\
 
 SRCS = $(addprefix ./srcs/,$(FILES))
 SRCS_LIBFT = $(addprefix ./libft/,$(LIBFT_FILES))
