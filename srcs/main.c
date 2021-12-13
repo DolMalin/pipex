@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 11:02:01 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/12 22:24:08 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/13 21:19:06 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,15 @@ static void	parent_process(char **envp, char **av, int end[2], t_cmd *cmd)
 /* 
 	TODO 
 	- Protect pipe and fork
+	- Prepare test files
+		file1 do not exist
+		arg1 is ""
+		file1 do not have permissions
+		cmd 1 do not exist
+		cmd 2 do not exist
+		file2 do not exist
+		arg2 is ""
+		file2 do not have permissions
 */
 
 static void	pipex(char **av, char **envp)
