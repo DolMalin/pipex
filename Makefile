@@ -6,7 +6,7 @@
 #    By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 14:35:08 by pdal-mol          #+#    #+#              #
-#    Updated: 2021/12/12 18:00:45 by pdal-mol         ###   ########.fr        #
+#    Updated: 2021/12/14 11:38:58 by pdal-mol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ FLAGS = -Wall -Wextra -Werror
 
 all: library $(NAME) 
 
-%.o: %.c ./includes/pipex.h 
+%.o: %.c ./includes/pipex.h $(LIB)
 	gcc $(FLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ) $(LIB)

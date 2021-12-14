@@ -6,7 +6,7 @@
 /*   By: pdal-mol <dolmalinn@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 11:02:01 by pdal-mol          #+#    #+#             */
-/*   Updated: 2021/12/13 21:19:06 by pdal-mol         ###   ########.fr       */
+/*   Updated: 2021/12/14 11:36:12 by pdal-mol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,6 @@ static void	parent_process(char **envp, char **av, int end[2], t_cmd *cmd)
 	exit(EXIT_SUCCESS);
 }
 
-/* 
-	TODO 
-	- Protect pipe and fork
-	- Prepare test files
-		file1 do not exist
-		arg1 is ""
-		file1 do not have permissions
-		cmd 1 do not exist
-		cmd 2 do not exist
-		file2 do not exist
-		arg2 is ""
-		file2 do not have permissions
-*/
-
 static void	pipex(char **av, char **envp)
 {
 	t_cmd	*cmd;
@@ -75,9 +61,18 @@ static void	pipex(char **av, char **envp)
 	int		pid;
 
 	cmd = init_cmd(av, envp);
-	pipe(end);
+	if (pipe(end) == -1)
+	{
+		clear_cmd(cmd);
+		exit(EXIT_FAILURE);
+	}	
 	pid = fork();
-	if (pid > 0)
+	if (pid < 0)
+	{
+		clear_cmd(cmd);
+		exit(EXIT_FAILURE);
+	}
+	else if (pid > 0)
 		child_process(envp, av, end, cmd);
 	else if (waitpid(pid, 0, 0) == -1)
 		parent_process(envp, av, end, cmd);
